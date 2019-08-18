@@ -1,8 +1,7 @@
 <template>
   <mark-display
     ref="main"
-    :markdown="markdown"
-    :src="src"
+    :src="welcome"
     @title="setTitle"
     keyboard-ctrl
     url-hash-ctrl
@@ -17,13 +16,14 @@
 import MarkDisplay from "vue-mark-display";
 import Hammer from "hammerjs";
 import JoyCon from "./joycon";
+import welcome from "./welcome.md";
 
 const joyCon = new JoyCon();
 
 export default {
   components: { MarkDisplay },
   data() {
-    return { markdown: "" };
+    return { welcome };
   },
   methods: {
     setTitle({ title }) {
